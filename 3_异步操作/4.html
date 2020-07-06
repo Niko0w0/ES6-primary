@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.4.1.min.js" charset="UTF-8"></script>
+    <script>
+        async function show(){
+            let a=12;
+            let b=5;
+            let data=await $.ajax({
+                url:"data/1.txt",
+                dataType:"json"
+            });
+            alert(a+b+data[0]);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

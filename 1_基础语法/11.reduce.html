@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[68,53,12,98,65];
+        let result=arr.reduce(function (tmp,item,index){
+            // alert(index + ":" + tmp + "," + item);
+            return tmp+item;
+        });
+
+        alert(result/arr.length);
+    </script>
+</body>
+</html>

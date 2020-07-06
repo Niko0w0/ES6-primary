@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * ES5的var的作用域--函数级
+         * ES6的let的作用域--块级
+         * 
+         * 变量：
+         * var 重复声明，不能限制修改，函数级
+         * 
+         * let 不能重复声明，变量，块级
+         * const 不能，常量，块级
+         */ 
+
+        window.onload = function(){
+            let aBtn = document.getElementsByTagName("input");
+
+            for(var i = 0; i < aBtn.length; i++){
+                // 闭包写法
+                (function(i){
+                    aBtn[i].onclick = function () {
+                    alert(i);
+                };
+                })(i);
+            }
+        }
+    </script>
+    <input type="button" value="a">
+    <input type="button" value="b">
+    <input type="button" value="c">
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 使用函数的形式来写对象
+        function Person(name,age){
+            this.name=name;
+            this.age=age;
+
+            this.showName=function (){
+                alert(this.name);
+            };
+            this.showAge=function (){
+                alert(this.age);
+            }
+        }
+
+        // 添加方法
+        // Person.prototype.showName=function (){
+        //     alert(this.name);
+        // };
+        // Person.prototype.showAge=function (){
+        //     alert(this.age);
+        // }
+
+        // let p=new Person("niko",20);
+        // p.showName();
+        // p.showAge();
+
+
+        function Worker(name,age,job){
+            Person.call(this,name,age);
+            this.job = job;
+        }
+        Worker.prototype=new Person();
+            Worker.prototype.constructor=Worker;
+
+            Worker.prototype.showJob = function (){
+                alert(this.job);
+            }
+
+            let w = new Worker("niko",20,"dududu");
+            w.showName();
+            w.showAge();
+            w.showJob();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
